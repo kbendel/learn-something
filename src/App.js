@@ -12,8 +12,7 @@ function App() {
   const fetchData = async () => {
     try {
       const response = await axios.get('https://q2ajp06ktk.execute-api.us-east-2.amazonaws.com/default/learnSomething');
-      const jsonData = await response.json();
-      setData(jsonData);
+      setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
